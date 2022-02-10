@@ -3,8 +3,10 @@ const mongoose = require('mongoose');
 mongoose
   //       Atlas link   cats-app-dev is the name of our database
   //            |            |
-  .connect(' XXXXXXX  /cats-app-dev')
-  .then(x =>
+  .connect(
+      "mongodb+srv://Miki:ironhack@cluster0.lpnm2.mongodb.net/cats-app-dev?retryWrites=true&w=majority"
+      )
+  .then((x) =>
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   )
-  .catch(err => console.error('Error connecting to mongo', err));
+  .catch((err) => console.error('Error connecting to mongo', err));
